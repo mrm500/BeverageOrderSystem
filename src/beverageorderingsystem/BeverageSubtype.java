@@ -1,8 +1,7 @@
 package beverageorderingsystem;
 
-import java.util.List;
 
-public class BeverageSubtype {
+public class BeverageSubtype implements Comparable<BeverageSubtype> {
 
     private String beverageSubtypeName;
     private double tax;
@@ -21,5 +20,10 @@ public class BeverageSubtype {
     }
     public void setTax(double tax) {
         this.tax = tax;
+    }
+
+    @Override
+    public int compareTo(BeverageSubtype o) {
+        return this.beverageSubtypeName.compareTo(o.getBeverageSubtypeName());
     }
 }

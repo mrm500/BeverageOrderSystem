@@ -18,4 +18,20 @@ public class Item {
     public double getPrice() {
         return price;
     }
+
+    public String getInfo() {
+        return itemName + " - Rs" + price;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null)
+            return false;
+        if (!(obj instanceof Item))
+            return false;
+        Item item = (Item) obj;
+        if (this.itemName.equals(item.itemName) && this.price == item.price)
+            return true;
+        return false;
+    }
 }
